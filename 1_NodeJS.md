@@ -261,78 +261,201 @@ Console {
 ###### Express
 
 - [Evented IO](http://ksat.me/what-is-evented-io-and-why-it-scales/)
+- Example-1
+
+	```sh
+	☁  Desktop  mkdir myapp
+	☁  Desktop  cd myapp
+	☁  myapp  npm init
+	This utility will walk you through creating a package.json file.
+	It only covers the most common items, and tries to guess sensible defaults.
+	
+	See `npm help json` for definitive documentation on these fields
+	and exactly what they do.
+	
+	Use `npm install <pkg>` afterwards to install a package and
+	save it as a dependency in the package.json file.
+	
+	Press ^C at any time to quit.
+	package name: (myapp)
+	version: (1.0.0)
+	description:
+	entry point: (index.js) app.js
+	test command:
+	git repository:
+	keywords:
+	license: (MIT)
+	About to write to /Users/kanishka/Desktop/myapp/package.json:
+	
+	{
+	  "name": "myapp",
+	  "version": "1.0.0",
+	  "description": "",
+	  "main": "app.js",
+	  "scripts": {
+	    "test": "echo \"Error: no test specified\" && exit 1"
+	  },
+	  "author": "kanishka <kanishka.s9@gmail.com> (https://kan1shka9.github.io/)",
+	  "license": "MIT"
+	}
+	
+	
+	Is this ok? (yes)
+	☁  myapp  ll
+	total 8
+	-rw-r--r--  1 kanishka  staff   262B Mar 18 12:52 package.json
+	☁  myapp  npm install express --save
+	npm notice created a lockfile as package-lock.json. You should commit this file.
+	npm WARN myapp@1.0.0 No description
+	npm WARN myapp@1.0.0 No repository field.
+	
+	+ express@4.16.3
+	added 49 packages from 47 contributors in 2.693s
+	☁  myapp  ll
+	total 40
+	drwxr-xr-x  50 kanishka  staff   1.6K Mar 18 12:52 node_modules
+	-rw-r--r--   1 kanishka  staff    13K Mar 18 12:52 package-lock.json
+	-rw-r--r--   1 kanishka  staff   311B Mar 18 12:52 package.json
+	☁  myapp
+	```
+	
+	`app.js`
+	
+	```javascript
+	const express = require('express')
+	
+	const app = express()
+	
+	// on GET request to the url
+	app.get('/todos', (req, res) => res.send("You sent a GET request!!"))
+	
+	// on POST request to the same url
+	app.post('/todos', (req, res) => res.send("You sent a POST request!!"))
+	
+	// start server on port 3000
+	app.listen(3000, () => console.log('Example app listening on port 3000!'))
+	```
+	
+	![](images/1/1.png)
+
+- Example-2
+
+	```sh
+	☁  Desktop  mkdir express-server
+	☁  Desktop  cd express-server
+	☁  express-server  npm init
+	This utility will walk you through creating a package.json file.
+	It only covers the most common items, and tries to guess sensible defaults.
+	
+	See `npm help json` for definitive documentation on these fields
+	and exactly what they do.
+	
+	Use `npm install <pkg>` afterwards to install a package and
+	save it as a dependency in the package.json file.
+	
+	Press ^C at any time to quit.
+	package name: (express-server)
+	version: (1.0.0)
+	description:
+	entry point: (index.js) server.js
+	test command:
+	git repository:
+	keywords:
+	license: (MIT)
+	About to write to /Users/kanishka/Desktop/express-server/package.json:
+	
+	{
+	  "name": "express-server",
+	  "version": "1.0.0",
+	  "description": "",
+	  "main": "server.js",
+	  "scripts": {
+	    "test": "echo \"Error: no test specified\" && exit 1"
+	  },
+	  "author": "kanishka <kanishka.s9@gmail.com> (https://kan1shka9.github.io/)",
+	  "license": "MIT"
+	}
+	
+	
+	Is this ok? (yes)
+	☁  express-server  npm install express --save
+	npm notice created a lockfile as package-lock.json. You should commit this file.
+	npm WARN express-server@1.0.0 No description
+	npm WARN express-server@1.0.0 No repository field.
+	
+	+ express@4.16.3
+	added 49 packages from 47 contributors in 2.988s
+	☁  express-server  ll
+	total 40
+	drwxr-xr-x  50 kanishka  staff   1.6K Mar 18 15:28 node_modules
+	-rw-r--r--   1 kanishka  staff    13K Mar 18 15:28 package-lock.json
+	-rw-r--r--   1 kanishka  staff   323B Mar 18 15:28 package.json
+	☁  express-server
+	```
+	
+	`server.js`
+	
+	```javascript
+	const express = require('express')
+	const app = express()
+	
+	var jsonData = {count: 12, message: 'hey'};
+	
+	app.get('/', function(req, res){
+	  // res.sendFile takes an absolute path to a file and
+	  // sets the mime type based n the file extname
+	  res.sendFile(__dirname + '/index.html', function(err) {
+	    if (err) {
+	      res.status(500).send(err);
+	    }
+	  })
+	});
+	
+	app.get('/data', function(req, res) {
+	  res.json(jsonData);
+	});
+	
+	
+	const port = 3000;
+	app.listen(port, function(){
+	  console.log('listening on http://localhost:', port);
+	});
+	```
+	
+	`index.html`
+	
+	```html
+	<!DOCTYPE html>
+	<html>
+	<head>
+		<title>My Express App</title>
+	</head>
+	<body>
+	
+		<h1>Hello from Express</h1>
+	
+	</body>
+	</html>
+	```
+	
+	```sh
+	☁  express-server  node server.js
+	listening on http://localhost: 3000
+	```
+	
+	![](images/1/2.png)
+	
+- nodemon
 
 ```sh
-☁  Desktop  mkdir myapp
-☁  Desktop  cd myapp
-☁  myapp  npm init
-This utility will walk you through creating a package.json file.
-It only covers the most common items, and tries to guess sensible defaults.
-
-See `npm help json` for definitive documentation on these fields
-and exactly what they do.
-
-Use `npm install <pkg>` afterwards to install a package and
-save it as a dependency in the package.json file.
-
-Press ^C at any time to quit.
-package name: (myapp)
-version: (1.0.0)
-description:
-entry point: (index.js) app.js
-test command:
-git repository:
-keywords:
-license: (MIT)
-About to write to /Users/kanishka/Desktop/myapp/package.json:
-
-{
-  "name": "myapp",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "kanishka <kanishka.s9@gmail.com> (https://kan1shka9.github.io/)",
-  "license": "MIT"
-}
-
-
-Is this ok? (yes)
-☁  myapp  ll
-total 8
--rw-r--r--  1 kanishka  staff   262B Mar 18 12:52 package.json
-☁  myapp  npm install express --save
-npm notice created a lockfile as package-lock.json. You should commit this file.
-npm WARN myapp@1.0.0 No description
-npm WARN myapp@1.0.0 No repository field.
-
-+ express@4.16.3
-added 49 packages from 47 contributors in 2.693s
-☁  myapp  ll
-total 40
-drwxr-xr-x  50 kanishka  staff   1.6K Mar 18 12:52 node_modules
--rw-r--r--   1 kanishka  staff    13K Mar 18 12:52 package-lock.json
--rw-r--r--   1 kanishka  staff   311B Mar 18 12:52 package.json
-☁  myapp
+☁  ~  sudo npm i -g nodemon
 ```
 
-`app.js`
-
-```javascript
-const express = require('express')
-
-const app = express()
-
-// on GET request to the url
-app.get('/todos', (req, res) => res.send("You sent a GET request!!"))
-
-// on POST request to the same url
-app.post('/todos', (req, res) => res.send("You sent a POST request!!"))
-
-// start server on port 3000
-app.listen(3000, () => console.log('Example app listening on port 3000!'))
+```sh
+☁  express-server [master] ⚡ nodemon server.js
+[nodemon] 1.17.2
+[nodemon] to restart at any time, enter `rs`
+[nodemon] watching: *.*
+[nodemon] starting `node server.js`
+listening on http://localhost: 3000
 ```
-
-![](images/1/1.png)
