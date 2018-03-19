@@ -98,6 +98,121 @@ added 24 packages from 283 contributors in 1.757s
 ```
 
 ```sh
+☁  testing-example [master] tree -L 2 .
+.
+├── client
+│   ├── app.js
+│   ├── index.html
+│   └── style.css
+├── node_modules
+│   ├── accepts
+│   ├── array-flatten
+│   ├── assertion-error
+│   ├── asynckit
+│   ├── balanced-match
+│   ├── basic-auth
+│   ├── body-parser
+│   ├── brace-expansion
+│   ├── browser-stdout
+│   ├── bytes
+│   ├── chai
+│   ├── check-error
+│   ├── combined-stream
+│   ├── commander
+│   ├── component-emitter
+│   ├── concat-map
+│   ├── content-disposition
+│   ├── content-type
+│   ├── cookie
+│   ├── cookie-signature
+│   ├── cookiejar
+│   ├── core-util-is
+│   ├── debug
+│   ├── deep-eql
+│   ├── delayed-stream
+│   ├── depd
+│   ├── destroy
+│   ├── diff
+│   ├── ee-first
+│   ├── encodeurl
+│   ├── escape-html
+│   ├── escape-string-regexp
+│   ├── etag
+│   ├── express
+│   ├── extend
+│   ├── finalhandler
+│   ├── form-data
+│   ├── formidable
+│   ├── forwarded
+│   ├── fresh
+│   ├── fs.realpath
+│   ├── get-func-name
+│   ├── glob
+│   ├── growl
+│   ├── has-flag
+│   ├── he
+│   ├── http-errors
+│   ├── iconv-lite
+│   ├── inflight
+│   ├── inherits
+│   ├── ipaddr.js
+│   ├── isarray
+│   ├── lodash
+│   ├── media-typer
+│   ├── merge-descriptors
+│   ├── methods
+│   ├── mime
+│   ├── mime-db
+│   ├── mime-types
+│   ├── minimatch
+│   ├── minimist
+│   ├── mkdirp
+│   ├── mocha
+│   ├── morgan
+│   ├── ms
+│   ├── negotiator
+│   ├── on-finished
+│   ├── on-headers
+│   ├── once
+│   ├── parseurl
+│   ├── path-is-absolute
+│   ├── path-to-regexp
+│   ├── pathval
+│   ├── process-nextick-args
+│   ├── proxy-addr
+│   ├── qs
+│   ├── range-parser
+│   ├── raw-body
+│   ├── readable-stream
+│   ├── safe-buffer
+│   ├── send
+│   ├── serve-static
+│   ├── setprototypeof
+│   ├── statuses
+│   ├── string_decoder
+│   ├── superagent
+│   ├── supertest
+│   ├── supports-color
+│   ├── type-detect
+│   ├── type-is
+│   ├── unpipe
+│   ├── util-deprecate
+│   ├── utils-merge
+│   ├── vary
+│   └── wrappy
+├── package-lock.json
+├── package.json
+└── server
+    ├── lions.js
+    ├── server.js
+    ├── spec.js
+    └── tigers.js
+
+98 directories, 9 files
+☁  testing-example [master]
+```
+
+```sh
 ☁  testing-example  mocha server/spec.js
 
 
