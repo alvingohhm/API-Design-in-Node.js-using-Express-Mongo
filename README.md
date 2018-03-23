@@ -2,3 +2,4 @@
 
 - Notes from the course [`API Design in Node.js (using Express & Mongo)`](https://frontendmasters.com/courses/api-design-nodejs/)
   - [`Slides`](http://fem-node-api.netlify.com/)
+  - [`repo`](https://github.com/FrontendMasters/api-design-node/)
