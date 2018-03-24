@@ -1,0 +1,11 @@
+{
+  "name": "promises-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "kanishka <kanishka.s9@gmail.com> (https://kan1shka9.github.io/)",
+  "license": "MIT"
+}
